@@ -4,23 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AircraftMultiservicios | Sistemas de Climatización y Refrigeración</title>
-  <!-- Google Fonts & Font Awesome for icons -->
+  
+  <!-- Fuentes e Íconos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Top Accent Bar -->
+  <!-- Barra Superior -->
   <div class="top-accent-bar"></div>
 
-  <!-- Header / Navigation -->
+  <!-- Encabezado / Navegación -->
   <header class="navbar">
     <div class="container nav-container">
       <a href="#" class="logo">
-        <!-- Logo Oficial del Negocio -->
         <img src="logo.jpg" alt="AircraftMultiservicios Logo" class="brand-logo-img">
         <div class="logo-text">
           <span class="brand-title">AIRCRAFT</span>
@@ -29,18 +31,21 @@
         </div>
       </a>
       
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#galeria">Trabajos</a></li>
-          <li><a href="#tecnicos">Técnicos</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#contacto" class="btn-nav">Contacto</a></li>
-        </ul>
-      </nav>
+      <!-- Checkbox e ícono para el Menú Móvil (sin JavaScript) -->
+      <input type="checkbox" id="menu-btn" class="menu-btn-check">
+      <label for="menu-btn" class="menu-toggle-label" aria-label="Abrir Menú">
+        <i class="fa-solid fa-bars"></i>
+      </label>
 
-      <!-- Botones Redes Sociales Header -->
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#galeria">Trabajos</a></li>
+        <li><a href="#tecnicos">Técnicos</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto" class="btn-nav">Contacto</a></li>
+      </ul>
+
       <div class="header-socials">
         <a href="https://facebook.com/Aircraftmultiservicios" target="_blank" aria-label="Facebook" class="social-btn fb"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="https://instagram.com/aircraftmultiservicios" target="_blank" aria-label="Instagram" class="social-btn ig"><i class="fa-brands fa-instagram"></i></a>
@@ -50,7 +55,6 @@
 
   <!-- Hero Section -->
   <section id="inicio" class="hero">
-    <div class="hero-overlay"></div>
     <div class="container hero-content">
       <span class="badge"><i class="fa-solid fa-shield-halved"></i> Tu imagen también es parte de nuestro servicio</span>
       <h1>AIRCRAFT MULTISERVICIOS</h1>
@@ -68,7 +72,7 @@
     </div>
   </section>
 
-  <!-- Features / Stats Bar -->
+  <!-- Features Bar -->
   <section class="features-bar">
     <div class="container features-grid">
       <div class="feature-item">
@@ -81,14 +85,14 @@
       <div class="feature-item">
         <div class="feat-icon"><i class="fa-solid fa-award"></i></div>
         <div>
-          <h4>Colores de Alta Durabilidad</h4>
+          <h4>Garantía y Calidad</h4>
           <p>Técnicos calificados y garantizados</p>
         </div>
       </div>
       <div class="feature-item">
         <div class="feat-icon"><i class="fa-solid fa-user-check"></i></div>
         <div>
-          <h4>Ideal Para Trabajo en Campo</h4>
+          <h4>Trabajo en Campo</h4>
           <p>Atención oportuna e inmediata a domicilio</p>
         </div>
       </div>
@@ -126,7 +130,7 @@
     </div>
   </section>
 
-  <!-- Gallery / Work Showcase Section (Fotos y Videos) -->
+  <!-- Galería de Trabajos (Fotos y Videos) -->
   <section id="galeria" class="gallery-section">
     <div class="container">
       <div class="section-header">
@@ -136,10 +140,10 @@
       </div>
 
       <div class="gallery-grid">
-        <!-- Foto Trabajo 1 -->
+        <!-- Foto 1 -->
         <div class="gallery-card">
           <div class="media-container">
-            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" alt="Mantenimiento Aire Acondicionado">
+            <img src="foto1.jpg" alt="Mantenimiento Aire Acondicionado" onerror="this.src='https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop'">
             <span class="media-badge photo"><i class="fa-solid fa-camera"></i> Foto</span>
           </div>
           <div class="gallery-info">
@@ -148,13 +152,12 @@
           </div>
         </div>
 
-        <!-- Video Trabajo 1 -->
+        <!-- Video 1 -->
         <div class="gallery-card">
           <div class="media-container">
-            <!-- Reemplaza "video1.mp4" con el archivo de tu video -->
-            <video controls poster="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop">
+            <video controls poster="foto1.jpg">
               <source src="video1.mp4" type="video/mp4">
-              Tu navegador no soporta el formato de video.
+              Tu navegador no soporta la reproducción de video.
             </video>
             <span class="media-badge video"><i class="fa-solid fa-video"></i> Video</span>
           </div>
@@ -164,10 +167,10 @@
           </div>
         </div>
 
-        <!-- Foto Trabajo 2 -->
+        <!-- Foto 2 -->
         <div class="gallery-card">
           <div class="media-container">
-            <img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?q=80&w=800&auto=format&fit=crop" alt="Reparación de Lavadora">
+            <img src="foto2.jpg" alt="Reparación de Lavadora" onerror="this.src='https://images.unsplash.com/photo-1582735689369-4fe89db7114c?q=80&w=800&auto=format&fit=crop'">
             <span class="media-badge photo"><i class="fa-solid fa-camera"></i> Foto</span>
           </div>
           <div class="gallery-info">
@@ -179,7 +182,7 @@
     </div>
   </section>
 
-  <!-- Red de Técnicos Aliados Section -->
+  <!-- Red de Técnicos -->
   <section id="tecnicos" class="tech-section">
     <div class="container">
       <div class="section-header white-text">
@@ -189,11 +192,8 @@
       </div>
 
       <div class="tech-grid">
-        <!-- Técnico 1 -->
         <div class="tech-card">
-          <div class="tech-avatar">
-            <i class="fa-solid fa-user-gear"></i>
-          </div>
+          <div class="tech-avatar"><i class="fa-solid fa-user-gear"></i></div>
           <h3>Técnico Central / Sede Principal</h3>
           <span class="tech-role">Climatización & Refrigeración</span>
           <p class="tech-desc">Especialista en mantenimiento de Aires Acondicionados, Neveras y Lavadoras.</p>
@@ -203,11 +203,8 @@
           </a>
         </div>
 
-        <!-- Técnico 2 -->
         <div class="tech-card">
-          <div class="tech-avatar">
-            <i class="fa-solid fa-user-check"></i>
-          </div>
+          <div class="tech-avatar"><i class="fa-solid fa-user-check"></i></div>
           <h3>Técnico Aliado #2</h3>
           <span class="tech-role">Especialista en Refrigeración</span>
           <p class="tech-desc">Atención de neveras comerciales, cavas y nevecones de alta gama.</p>
@@ -217,11 +214,8 @@
           </a>
         </div>
 
-        <!-- Técnico 3 -->
         <div class="tech-card">
-          <div class="tech-avatar">
-            <i class="fa-solid fa-wrench"></i>
-          </div>
+          <div class="tech-avatar"><i class="fa-solid fa-wrench"></i></div>
           <h3>Técnico Aliado #3</h3>
           <span class="tech-role">Especialista en Lavadoras</span>
           <p class="tech-desc">Reparación de tarjetas electrónicas, motores y mantenimientos generales.</p>
@@ -234,7 +228,7 @@
     </div>
   </section>
 
-  <!-- About / Identidad Section -->
+  <!-- Nosotros Section -->
   <section id="nosotros" class="about">
     <div class="container about-container">
       <div class="about-text">
@@ -265,9 +259,7 @@
       <div class="footer-brand">
         <div class="logo logo-footer">
           <img src="logo.jpg" alt="Logo AircraftMultiservicios" class="brand-logo-img footer-logo-img">
-          <div>
-            AIRCRAFT<span>MULTISERVICIOS</span>
-          </div>
+          <div>AIRCRAFT<span>MULTISERVICIOS</span></div>
         </div>
         <p>Sistemas de Climatización y Refrigeración. Mantenimiento y reparación garantizada.</p>
       </div>
@@ -297,7 +289,7 @@
     </div>
   </footer>
 
-  <!-- Floating Buttons Container (WhatsApp, FB, IG) -->
+  <!-- Botones Flotantes (Facebook, Instagram, WhatsApp) -->
   <div class="floating-social-container">
     <a href="https://facebook.com/Aircraftmultiservicios" class="float-btn fb-float" target="_blank" aria-label="Facebook">
       <i class="fa-brands fa-facebook-f"></i>
@@ -307,7 +299,6 @@
     </a>
     <a href="https://wa.me/573113806211?text=Hola,%20vengo%20de%20la%20página%20web%20y%20necesito%20atención" class="float-btn wa-float" target="_blank" aria-label="WhatsApp">
       <i class="fa-brands fa-whatsapp"></i>
-      <span class="tooltip">Chatea con nosotros</span>
     </a>
   </div>
 
