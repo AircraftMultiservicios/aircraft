@@ -2,12 +2,14 @@
    VARIABLES & PALETA OFICIAL AIRCRAFTMULTISERVICIOS
    ========================================================================== */
 :root {
-  --navy-dark: #00122e;       /* Azul marino oscuro de fondo */
-  --royal-blue: #0044b3;      /* Azul principal de los uniformes */
-  --cyan-bright: #00d2ff;     /* Cyan brillante neón */
+  --navy-dark: #00122e;       /* Azul marino oscuro */
+  --royal-blue: #0044b3;      /* Azul principal */
+  --cyan-bright: #00d2ff;     /* Cyan neón */
   --yellow-accent: #ffcc00;   /* Amarillo corporativo */
   --red-accent: #e60000;      /* Rojo corporativo */
-  --whatsapp-green: #25d366;  /* Verde oficial WhatsApp */
+  --whatsapp-green: #25d366;  /* Verde WhatsApp */
+  --facebook-blue: #1877f2;   /* Azul Facebook */
+  --instagram-pink: #e4405f;  /* Rosa Instagram */
   --text-main: #334155;
   --text-light: #64748b;
   --bg-light: #f1f5f9;
@@ -48,14 +50,14 @@ ul {
   list-style: none;
 }
 
-/* Accent top bar con colores de la marca */
+/* Accent top bar */
 .top-accent-bar {
   height: 5px;
   background: linear-gradient(90deg, var(--yellow-accent) 0%, var(--red-accent) 50%, var(--cyan-bright) 100%);
 }
 
 /* ==========================================================================
-   NAVIGATION BAR
+   NAVIGATION BAR & LOGO
    ========================================================================== */
 .navbar {
   position: sticky;
@@ -78,17 +80,14 @@ ul {
   gap: 12px;
 }
 
-.logo-icon {
-  width: 45px;
-  height: 45px;
-  background: linear-gradient(135deg, var(--cyan-bright), var(--royal-blue));
+/* Imagen del logo oficial */
+.brand-logo-img {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 1.4rem;
-  box-shadow: 0 0 10px var(--cyan-bright);
+  object-fit: cover;
+  border: 2px solid var(--cyan-bright);
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
 }
 
 .logo-text {
@@ -121,12 +120,12 @@ ul {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.8rem;
+  gap: 1.5rem;
 }
 
 .nav-links a {
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #ffffff;
   transition: var(--transition);
 }
@@ -140,12 +139,31 @@ ul {
   color: #fff !important;
   padding: 0.5rem 1.2rem;
   border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
 }
 
-.btn-nav:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
+/* Social Buttons en Header */
+.header-socials {
+  display: flex;
+  gap: 8px;
+}
+
+.social-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.social-btn.fb { background-color: var(--facebook-blue); }
+.social-btn.ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+
+.social-btn:hover {
+  transform: scale(1.1);
 }
 
 /* ==========================================================================
@@ -182,7 +200,6 @@ ul {
   font-weight: 900;
   line-height: 1.1;
   color: #ffffff;
-  text-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
 .hero h2 {
@@ -190,7 +207,6 @@ ul {
   color: var(--yellow-accent);
   font-weight: 700;
   margin-bottom: 1rem;
-  letter-spacing: 1px;
 }
 
 .hero p {
@@ -392,6 +408,77 @@ ul {
 }
 
 /* ==========================================================================
+   GALLERY SECTION (FOTOS Y VIDEOS DE TRABAJOS)
+   ========================================================================== */
+.gallery-section {
+  background-color: var(--bg-white);
+  padding: 5rem 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.gallery-card {
+  background-color: var(--bg-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 1px solid #e2e8f0;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.media-container {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background-color: #000;
+}
+
+.media-container img, .media-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  z-index: 2;
+}
+
+.media-badge.photo { background-color: var(--royal-blue); }
+.media-badge.video { background-color: var(--red-accent); }
+
+.gallery-info {
+  padding: 1.5rem;
+}
+
+.gallery-info h4 {
+  font-size: 1.1rem;
+  color: var(--navy-dark);
+  margin-bottom: 0.4rem;
+}
+
+.gallery-info p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* ==========================================================================
    TECNICOS ALIADOS SECTION
    ========================================================================== */
 .tech-section {
@@ -400,17 +487,9 @@ ul {
   color: #fff;
 }
 
-.white-text h2 {
-  color: #ffffff !important;
-}
-
-.white-text p {
-  color: #94a3b8 !important;
-}
-
-.yellow-underline {
-  background: linear-gradient(90deg, var(--yellow-accent), var(--red-accent)) !important;
-}
+.white-text h2 { color: #ffffff !important; }
+.white-text p { color: #94a3b8 !important; }
+.yellow-underline { background: linear-gradient(90deg, var(--yellow-accent), var(--red-accent)) !important; }
 
 .tech-grid {
   display: grid;
@@ -435,7 +514,6 @@ ul {
   transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.08);
   border-color: var(--cyan-bright);
-  box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
 }
 
 .tech-avatar {
@@ -507,16 +585,13 @@ ul {
   align-items: center;
 }
 
-.highlight {
-  color: var(--royal-blue);
-}
+.highlight { color: var(--royal-blue); }
 
 .about-text h2 {
   font-size: 2.1rem;
   color: var(--navy-dark);
   font-weight: 800;
   margin-bottom: 1.2rem;
-  line-height: 1.2;
 }
 
 .about-text p {
@@ -534,9 +609,7 @@ ul {
   color: var(--navy-dark);
 }
 
-.check-list i {
-  color: var(--cyan-bright);
-}
+.check-list i { color: var(--cyan-bright); }
 
 .cta-box {
   background: linear-gradient(135deg, var(--navy-dark), var(--royal-blue));
@@ -562,17 +635,11 @@ ul {
 .cta-box p {
   opacity: 0.9;
   margin-bottom: 1.5rem;
-  font-size: 0.95rem;
 }
 
 .btn-light {
   background-color: var(--whatsapp-green);
   color: #fff;
-}
-
-.btn-light:hover {
-  background-color: #1eb954;
-  transform: translateY(-2px);
 }
 
 /* ==========================================================================
@@ -593,15 +660,21 @@ ul {
 }
 
 .logo-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   color: #fff;
   margin-bottom: 0.8rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 800;
 }
 
-.logo-footer span {
-  color: var(--cyan-bright);
+.footer-logo-img {
+  width: 40px;
+  height: 40px;
 }
+
+.logo-footer span { color: var(--cyan-bright); }
 
 .footer-brand p {
   color: #94a3b8;
@@ -609,7 +682,7 @@ ul {
   font-size: 0.9rem;
 }
 
-.footer-contact h4 {
+.footer-contact h4, .footer-socials h4 {
   font-size: 1.1rem;
   margin-bottom: 1rem;
   color: var(--yellow-accent);
@@ -624,12 +697,30 @@ ul {
   font-size: 0.9rem;
 }
 
+.social-links-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.social-links-footer a {
+  color: #94a3b8;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.social-links-footer a:hover {
+  color: var(--cyan-bright);
+}
+
 .motivational-quote {
   border-top: 1px solid #1e293b;
   border-bottom: 1px solid #1e293b;
   padding: 2rem 1rem;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.01);
 }
 
 .motivational-quote p {
@@ -638,7 +729,6 @@ ul {
   color: #cbd5e1;
   max-width: 800px;
   margin: 0 auto;
-  line-height: 1.6;
 }
 
 .footer-bottom {
@@ -649,33 +739,47 @@ ul {
 }
 
 /* ==========================================================================
-   FLOATING WHATSAPP BUTTON
+   FLOATING BUTTONS CONTAINER (WhatsApp, FB, IG)
    ========================================================================== */
-.whatsapp-float {
+.floating-social-container {
   position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 30px;
-  right: 30px;
-  background-color: var(--whatsapp-green);
-  color: #fff;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 32px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   z-index: 1000;
+}
+
+.float-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: var(--transition);
+  position: relative;
 }
 
-.whatsapp-float:hover {
+.float-btn:hover {
   transform: scale(1.1);
-  background-color: #1eb954;
 }
 
-.whatsapp-float .tooltip {
+.wa-float {
+  background-color: var(--whatsapp-green);
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+}
+
+.fb-float { background-color: var(--facebook-blue); }
+.ig-float { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+
+.wa-float .tooltip {
   visibility: hidden;
   width: 140px;
   background-color: #333;
@@ -684,7 +788,6 @@ ul {
   border-radius: 6px;
   padding: 6px;
   position: absolute;
-  z-index: 1;
   right: 70px;
   font-size: 0.75rem;
   opacity: 0;
@@ -692,7 +795,7 @@ ul {
   white-space: nowrap;
 }
 
-.whatsapp-float:hover .tooltip {
+.wa-float:hover .tooltip {
   visibility: visible;
   opacity: 1;
 }
@@ -713,17 +816,24 @@ ul {
     justify-content: center;
   }
 
-  .hero h1 {
-    font-size: 2rem;
+  .header-socials { display: none; }
+
+  .hero h1 { font-size: 2rem; }
+
+  .about-container { grid-template-columns: 1fr; }
+
+  .floating-social-container {
+    bottom: 15px;
+    right: 15px;
   }
 
-  .about-container {
-    grid-template-columns: 1fr;
+  .float-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
   }
 
-  .whatsapp-float {
-    bottom: 20px;
-    right: 20px;
+  .wa-float {
     width: 50px;
     height: 50px;
     font-size: 26px;

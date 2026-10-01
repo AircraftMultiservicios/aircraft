@@ -13,29 +13,38 @@
 </head>
 <body>
 
-  <!-- Top Bar Decorativa -->
+  <!-- Top Accent Bar -->
   <div class="top-accent-bar"></div>
 
   <!-- Header / Navigation -->
   <header class="navbar">
     <div class="container nav-container">
       <a href="#" class="logo">
-        <div class="logo-icon"><i class="fa-solid fa-arrows-spin"></i></div>
+        <!-- Logo Oficial del Negocio -->
+        <img src="logo.jpg" alt="AircraftMultiservicios Logo" class="brand-logo-img">
         <div class="logo-text">
           <span class="brand-title">AIRCRAFT</span>
           <span class="brand-sub">MULTISERVICIOS</span>
           <span class="brand-tag">SISTEMAS DE CLIMATIZACIÓN Y REFRIGERACIÓN</span>
         </div>
       </a>
+      
       <nav>
         <ul class="nav-links">
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#tecnicos">Técnicos Aliados</a></li>
+          <li><a href="#galeria">Trabajos</a></li>
+          <li><a href="#tecnicos">Técnicos</a></li>
           <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#contacto" class="btn-nav">Contacto</a></li>
         </ul>
       </nav>
+
+      <!-- Botones Redes Sociales Header -->
+      <div class="header-socials">
+        <a href="https://facebook.com/Aircraftmultiservicios" target="_blank" aria-label="Facebook" class="social-btn fb"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://instagram.com/aircraftmultiservicios" target="_blank" aria-label="Instagram" class="social-btn ig"><i class="fa-brands fa-instagram"></i></a>
+      </div>
     </div>
   </header>
 
@@ -50,10 +59,10 @@
       
       <div class="hero-btns">
         <a href="https://wa.me/573113806211?text=Hola,%20necesito%20un%20servicio%20técnico%20con%20AircraftMultiservicios" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-          <i class="fa-brands fa-whatsapp"></i> Solicitar Servicio Principal (+57 311 380 6211)
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp Directo (+57 311 380 6211)
         </a>
-        <a href="#tecnicos" class="btn btn-secondary">
-          <i class="fa-solid fa-users-gear"></i> Ver Red de Técnicos
+        <a href="#galeria" class="btn btn-secondary">
+          <i class="fa-solid fa-photo-film"></i> Ver Galería de Trabajos
         </a>
       </div>
     </div>
@@ -112,6 +121,59 @@
           <h3>Lavadoras y Secadoras</h3>
           <p>Servicio técnico para lavadoras automáticas y digitales, mantenimiento de tina, transmisión, bombas de agua y sensores.</p>
           <a href="https://wa.me/573113806211?text=Hola,%20requiero%20servicio%20para%20una%20Lavadora" target="_blank" class="card-link">Cotizar Servicio <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery / Work Showcase Section (Fotos y Videos) -->
+  <section id="galeria" class="gallery-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>GALERÍA DE TRABAJOS REALIZADOS</h2>
+        <div class="underline"></div>
+        <p>Evidencia real de nuestros mantenimientos, reparaciones e instalaciones en campo.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- Foto Trabajo 1 -->
+        <div class="gallery-card">
+          <div class="media-container">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" alt="Mantenimiento Aire Acondicionado">
+            <span class="media-badge photo"><i class="fa-solid fa-camera"></i> Foto</span>
+          </div>
+          <div class="gallery-info">
+            <h4>Mantenimiento Preventivo Mini Split</h4>
+            <p>Limpieza profunda y desinfección de evaporador y condensador.</p>
+          </div>
+        </div>
+
+        <!-- Video Trabajo 1 -->
+        <div class="gallery-card">
+          <div class="media-container">
+            <!-- Reemplaza "video1.mp4" con el archivo de tu video -->
+            <video controls poster="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop">
+              <source src="video1.mp4" type="video/mp4">
+              Tu navegador no soporta el formato de video.
+            </video>
+            <span class="media-badge video"><i class="fa-solid fa-video"></i> Video</span>
+          </div>
+          <div class="gallery-info">
+            <h4>Prueba de Rendimiento Nevera</h4>
+            <p>Verificación de flujo de refrigerante y congelación rápida.</p>
+          </div>
+        </div>
+
+        <!-- Foto Trabajo 2 -->
+        <div class="gallery-card">
+          <div class="media-container">
+            <img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?q=80&w=800&auto=format&fit=crop" alt="Reparación de Lavadora">
+            <span class="media-badge photo"><i class="fa-solid fa-camera"></i> Foto</span>
+          </div>
+          <div class="gallery-info">
+            <h4>Cambio de Transmisión e Inspección</h4>
+            <p>Reparación general de lavadora digital en domicilio.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -202,15 +264,27 @@
     <div class="container footer-content">
       <div class="footer-brand">
         <div class="logo logo-footer">
-          <i class="fa-solid fa-arrows-spin"></i> AIRCRAFT<span>MULTISERVICIOS</span>
+          <img src="logo.jpg" alt="Logo AircraftMultiservicios" class="brand-logo-img footer-logo-img">
+          <div>
+            AIRCRAFT<span>MULTISERVICIOS</span>
+          </div>
         </div>
         <p>Sistemas de Climatización y Refrigeración. Mantenimiento y reparación garantizada.</p>
       </div>
+
       <div class="footer-contact">
         <h4>Contacto Directo</h4>
         <p><i class="fa-brands fa-whatsapp"></i> +57 311 380 6211</p>
         <p><i class="fa-brands fa-whatsapp"></i> +57 302 681 2764</p>
         <p><i class="fa-solid fa-location-dot"></i> Servicio Técnico a Domicilio</p>
+      </div>
+
+      <div class="footer-socials">
+        <h4>Síguenos en Redes</h4>
+        <div class="social-links-footer">
+          <a href="https://facebook.com/Aircraftmultiservicios" target="_blank"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+          <a href="https://instagram.com/aircraftmultiservicios" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        </div>
       </div>
     </div>
     
@@ -223,11 +297,19 @@
     </div>
   </footer>
 
-  <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/573113806211?text=Hola,%20vengo%20de%20la%20página%20web%20y%20necesito%20atención" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-    <span class="tooltip">Chatea con nosotros</span>
-  </a>
+  <!-- Floating Buttons Container (WhatsApp, FB, IG) -->
+  <div class="floating-social-container">
+    <a href="https://facebook.com/Aircraftmultiservicios" class="float-btn fb-float" target="_blank" aria-label="Facebook">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+    <a href="https://instagram.com/aircraftmultiservicios" class="float-btn ig-float" target="_blank" aria-label="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="https://wa.me/573113806211?text=Hola,%20vengo%20de%20la%20página%20web%20y%20necesito%20atención" class="float-btn wa-float" target="_blank" aria-label="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="tooltip">Chatea con nosotros</span>
+    </a>
+  </div>
 
 </body>
 </html>
