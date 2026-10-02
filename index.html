@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AircraftMultiservicios | Sistemas de Climatización y Refrigeración</title>
+  <title>AircraftMultiservicios | Galería de Trabajos</title>
   
   <!-- Fuentes e Íconos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
   <header class="navbar">
     <div class="container nav-container">
       <a href="#" class="logo">
-        <img src="logo.jpg" alt="AircraftMultiservicios Logo" class="brand-logo-img">
+        <img src="logo.jpg" alt="AircraftMultiservicios Logo" class="brand-logo-img" onerror="this.src='https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=200&auto=format&fit=crop'">
         <div class="logo-text">
           <span class="brand-title">AIRCRAFT</span>
           <span class="brand-sub">MULTISERVICIOS</span>
@@ -31,7 +31,7 @@
         </div>
       </a>
       
-      <!-- Checkbox e ícono para el Menú Móvil (sin JavaScript) -->
+      <!-- Checkbox e ícono para Menú Móvil -->
       <input type="checkbox" id="menu-btn" class="menu-btn-check">
       <label for="menu-btn" class="menu-toggle-label" aria-label="Abrir Menú">
         <i class="fa-solid fa-bars"></i>
@@ -40,7 +40,7 @@
       <ul class="nav-links">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#galeria">Trabajos</a></li>
+        <li><a href="#galeria" class="active-link">Galería</a></li>
         <li><a href="#tecnicos">Técnicos</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#contacto" class="btn-nav">Contacto</a></li>
@@ -59,14 +59,14 @@
       <span class="badge"><i class="fa-solid fa-shield-halved"></i> Tu imagen también es parte de nuestro servicio</span>
       <h1>AIRCRAFT MULTISERVICIOS</h1>
       <h2>Sistemas de Climatización y Refrigeración</h2>
-      <p>Mantenimiento y reparación profesional de Aires Acondicionados, Neveras, Nevecones y Lavadoras con la garantía y profesionalismo que te mereces.</p>
+      <p>Mantenimiento y reparación profesional de Aires Acondicionados, Neveras, Nevecones y Lavadoras con la garantía y transparencia que te mereces.</p>
       
       <div class="hero-btns">
         <a href="https://wa.me/573113806211?text=Hola,%20necesito%20un%20servicio%20técnico%20con%20AircraftMultiservicios" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
           <i class="fa-brands fa-whatsapp"></i> WhatsApp Directo (+57 311 380 6211)
         </a>
         <a href="#galeria" class="btn btn-secondary">
-          <i class="fa-solid fa-photo-film"></i> Ver Galería de Trabajos
+          <i class="fa-solid fa-images"></i> Ver Galería de Trabajos
         </a>
       </div>
     </div>
@@ -130,54 +130,102 @@
     </div>
   </section>
 
-  <!-- Galería de Trabajos (Fotos y Videos) -->
+  <!-- SECCIÓN DE GALERÍA DE TRABAJOS -->
   <section id="galeria" class="gallery-section">
     <div class="container">
       <div class="section-header">
         <h2>GALERÍA DE TRABAJOS REALIZADOS</h2>
         <div class="underline"></div>
-        <p>Evidencia real de nuestros mantenimientos, reparaciones e instalaciones en campo.</p>
+        <p>Evidencia real de nuestros mantenimientos. Toca cualquier foto o video para abrir en pantalla completa.</p>
+      </div>
+
+      <!-- Filtros de Galería -->
+      <div class="gallery-filters">
+        <button class="filter-btn active" onclick="filterGallery('todos')">Todos</button>
+        <button class="filter-btn" onclick="filterGallery('aires')">Aires Acondicionados</button>
+        <button class="filter-btn" onclick="filterGallery('neveras')">Neveras</button>
+        <button class="filter-btn" onclick="filterGallery('lavadoras')">Lavadoras</button>
       </div>
 
       <div class="gallery-grid">
-        <!-- Foto 1 -->
-        <div class="gallery-card">
-          <div class="media-container">
-            <img src="foto1.jpg" alt="Mantenimiento Aire Acondicionado" onerror="this.src='https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop'">
-            <span class="media-badge photo"><i class="fa-solid fa-camera"></i> Foto</span>
+
+        <!-- Trabajo 1: Aire Acondicionado (Antes y Después) -->
+        <div class="gallery-card filter-item aires">
+          <div class="card-header-tag">
+            <span class="service-tag"><i class="fa-solid fa-snowflake"></i> Aire Acondicionado</span>
+          </div>
+          <div class="ba-images">
+            <div class="ba-box" onclick="openLightBox('image', 'antes1.jpg', 'Aire Acondicionado - Antes del Servicio (Suciedad y moho acumulado)')">
+              <img src="antes1.jpg" alt="Antes" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=600&auto=format&fit=crop'">
+              <span class="ba-badge before">ANTES</span>
+            </div>
+            <div class="ba-box" onclick="openLightBox('image', 'despues1.jpg', 'Aire Acondicionado - Después del Servicio (Limpieza y desinfección profunda)')">
+              <img src="despues1.jpg" alt="Después" onerror="this.src='https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=600&auto=format&fit=crop'">
+              <span class="ba-badge after">DESPUÉS</span>
+            </div>
           </div>
           <div class="gallery-info">
             <h4>Mantenimiento Preventivo Mini Split</h4>
-            <p>Limpieza profunda y desinfección de evaporador y condensador.</p>
+            <p>Remoción de hongos e impurezas en turbina y serpentín evaporador.</p>
           </div>
         </div>
 
-        <!-- Video 1 -->
-        <div class="gallery-card">
-          <div class="media-container">
-            <video controls poster="foto1.jpg">
-              <source src="video1.mp4" type="video/mp4">
-              Tu navegador no soporta la reproducción de video.
-            </video>
-            <span class="media-badge video"><i class="fa-solid fa-video"></i> Video</span>
+        <!-- Trabajo 2: Lavadora (Antes y Después) -->
+        <div class="gallery-card filter-item lavadoras">
+          <div class="card-header-tag">
+            <span class="service-tag"><i class="fa-solid fa-soap"></i> Lavadoras</span>
+          </div>
+          <div class="ba-images">
+            <div class="ba-box" onclick="openLightBox('image', 'antes2.jpg', 'Lavadora - Antes (Tina llena de sarro y sedimentos de jabón)')">
+              <img src="antes2.jpg" alt="Antes" onerror="this.src='https://images.unsplash.com/photo-1582735689369-4fe89db7114c?q=80&w=600&auto=format&fit=crop'">
+              <span class="ba-badge before">ANTES</span>
+            </div>
+            <div class="ba-box" onclick="openLightBox('image', 'despues2.jpg', 'Lavadora - Después (Mantenimiento general y desinfección)')">
+              <img src="despues2.jpg" alt="Después" onerror="this.src='https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?q=80&w=600&auto=format&fit=crop'">
+              <span class="ba-badge after">DESPUÉS</span>
+            </div>
           </div>
           <div class="gallery-info">
-            <h4>Prueba de Rendimiento Nevera</h4>
-            <p>Verificación de flujo de refrigerante y congelación rápida.</p>
+            <h4>Limpieza General de Tina</h4>
+            <p>Desarme completo y mantenimiento técnico de lavadora automática.</p>
           </div>
         </div>
 
-        <!-- Foto 2 -->
-        <div class="gallery-card">
-          <div class="media-container">
-            <img src="foto2.jpg" alt="Reparación de Lavadora" onerror="this.src='https://images.unsplash.com/photo-1582735689369-4fe89db7114c?q=80&w=800&auto=format&fit=crop'">
+        <!-- Trabajo 3: Nevera (Foto Individual) -->
+        <div class="gallery-card filter-item neveras">
+          <div class="card-header-tag">
+            <span class="service-tag"><i class="fa-solid fa-temperature-arrow-down"></i> Neveras</span>
+          </div>
+          <div class="media-container" onclick="openLightBox('image', 'foto_nevera.jpg', 'Reparación de Sistema de Enfriamiento y Carga de Refrigerante')">
+            <img src="foto_nevera.jpg" alt="Servicio Nevera" onerror="this.src='https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=600&auto=format&fit=crop'">
             <span class="media-badge photo"><i class="fa-solid fa-camera"></i> Foto</span>
           </div>
           <div class="gallery-info">
-            <h4>Cambio de Transmisión e Inspección</h4>
-            <p>Reparación general de lavadora digital en domicilio.</p>
+            <h4>Diagnóstico de Refrigeración</h4>
+            <p>Sustitución de filtro secador y corrección de fuga de gas.</p>
           </div>
         </div>
+
+        <!-- Trabajo 4: Video de Mantenimiento -->
+        <div class="gallery-card filter-item aires">
+          <div class="card-header-tag">
+            <span class="service-tag"><i class="fa-solid fa-snowflake"></i> Aire Acondicionado</span>
+          </div>
+          <div class="media-container video-box" onclick="openLightBox('video', 'video1.mp4', 'Prueba de Presión y Flujo de Aire en Aire Acondicionado')">
+            <video poster="antes1.jpg">
+              <source src="video1.mp4" type="video/mp4">
+            </video>
+            <div class="play-overlay">
+              <i class="fa-solid fa-circle-play"></i>
+            </div>
+            <span class="media-badge video"><i class="fa-solid fa-video"></i> Video</span>
+          </div>
+          <div class="gallery-info">
+            <h4>Video: Prueba en Vivo</h4>
+            <p>Verificación de rendimiento tras el servicio técnico.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -233,9 +281,9 @@
     <div class="container about-container">
       <div class="about-text">
         <h2>TU IMAGEN TAMBIÉN ES <span class="highlight">PARTE DE NUESTRO SERVICIO</span></h2>
-        <p>En AircraftMultiservicios destacamos por nuestro compromiso, disciplina y presentación. Cada servicio es realizado por personal identificado con uniformes de alta durabilidad y tecnología Dry Fit, asegurando la pulcritud y confianza en tu hogar u oficina.</p>
+        <p>En AircraftMultiservicios destacamos por nuestro compromiso, disciplina y presentación. Cada servicio es realizado por personal identificado con uniformes oficiales, asegurando tranquilidad y profesionalismo en tu hogar u oficina.</p>
         <ul class="check-list">
-          <li><i class="fa-solid fa-circle-check"></i> Uniformes y carné de identificación oficial.</li>
+          <li><i class="fa-solid fa-circle-check"></i> Uniformes e identificación oficial.</li>
           <li><i class="fa-solid fa-circle-check"></i> Diagnóstico certero y repuestos de alta calidad.</li>
           <li><i class="fa-solid fa-circle-check"></i> Respuesta oportuna y directa por WhatsApp.</li>
         </ul>
@@ -246,7 +294,7 @@
           <h3>¿Necesitas soporte técnico de inmediato?</h3>
           <p>Escríbenos a nuestra línea principal y agendaremos la visita de uno de nuestros técnicos calificados.</p>
           <a href="https://wa.me/573113806211?text=Hola,%20necesito%20agendar%20una%20visita%20técnica" target="_blank" class="btn btn-light">
-            <i class="fa-brands fa-whatsapp"></i> Chat Directo (+573113806211)
+            <i class="fa-brands fa-whatsapp"></i> Chat Directo (+57 311 380 6211)
           </a>
         </div>
       </div>
@@ -258,7 +306,7 @@
     <div class="container footer-content">
       <div class="footer-brand">
         <div class="logo logo-footer">
-          <img src="logo.jpg" alt="Logo AircraftMultiservicios" class="brand-logo-img footer-logo-img">
+          <img src="logo.jpg" alt="Logo AircraftMultiservicios" class="brand-logo-img footer-logo-img" onerror="this.src='https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=200&auto=format&fit=crop'">
           <div>AIRCRAFT<span>MULTISERVICIOS</span></div>
         </div>
         <p>Sistemas de Climatización y Refrigeración. Mantenimiento y reparación garantizada.</p>
@@ -289,7 +337,7 @@
     </div>
   </footer>
 
-  <!-- Botones Flotantes (Facebook, Instagram, WhatsApp) -->
+  <!-- Botones Flotantes de Redes Sociales -->
   <div class="floating-social-container">
     <a href="https://facebook.com/Aircraftmultiservicios" class="float-btn fb-float" target="_blank" aria-label="Facebook">
       <i class="fa-brands fa-facebook-f"></i>
@@ -301,6 +349,78 @@
       <i class="fa-brands fa-whatsapp"></i>
     </a>
   </div>
+
+  <!-- VENTANA EMERGENTE (MODAL ESTILO FACEBOOK CON DIFUMINADO) -->
+  <div id="lightboxModal" class="modal" onclick="closeLightBox()">
+    <span class="modal-close" onclick="closeLightBox()">&times;</span>
+    <div class="modal-body" onclick="event.stopPropagation()">
+      <img id="lightboxImg" class="modal-media" style="display:none;" alt="Imagen Ampliada">
+      <video id="lightboxVideo" class="modal-media" controls style="display:none;"></video>
+      <div id="lightboxCaption" class="modal-caption"></div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT INTEGRADO -->
+  <script>
+    // Abrir Lightbox emergente
+    function openLightBox(type, src, captionText) {
+      const modal = document.getElementById("lightboxModal");
+      const img = document.getElementById("lightboxImg");
+      const video = document.getElementById("lightboxVideo");
+      const caption = document.getElementById("lightboxCaption");
+
+      modal.style.display = "flex";
+      caption.innerHTML = captionText;
+      document.body.style.overflow = "hidden"; // Desactivar scroll de fondo
+
+      if (type === 'image') {
+        video.style.display = "none";
+        video.pause();
+        img.src = src;
+        img.style.display = "block";
+      } else if (type === 'video') {
+        img.style.display = "none";
+        video.src = src;
+        video.style.display = "block";
+        video.play();
+      }
+    }
+
+    // Cerrar Lightbox emergente
+    function closeLightBox() {
+      const modal = document.getElementById("lightboxModal");
+      const video = document.getElementById("lightboxVideo");
+
+      modal.style.display = "none";
+      video.pause();
+      video.src = "";
+      document.body.style.overflow = "auto"; // Restaurar scroll
+    }
+
+    // Cerrar con la tecla ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") {
+        closeLightBox();
+      }
+    });
+
+    // Filtros de categoría de la Galería
+    function filterGallery(category) {
+      const buttons = document.querySelectorAll('.filter-btn');
+      const items = document.querySelectorAll('.filter-item');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      items.forEach(item => {
+        if (category === 'todos' || item.classList.contains(category)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
