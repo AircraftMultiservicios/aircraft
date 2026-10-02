@@ -79,13 +79,41 @@ body {
 }
 
 /* ==========================================
+   SUBMENÚ DE NAVEGACIÓN (VER TODO / FOTOS / VIDEOS)
+   ========================================== */
+.subnav-galeria {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.tab-link {
+  padding: 10px 22px;
+  border: 2px solid var(--primary-blue);
+  background: transparent;
+  color: var(--primary-blue);
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.tab-link:hover,
+.tab-link.active {
+  background: var(--primary-blue);
+  color: #ffffff;
+}
+
+/* ==========================================
    CUADRÍCULA DE LA GALERÍA (GRID)
    ========================================== */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 25px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .gallery-item {
@@ -229,4 +257,10 @@ body {
   .media-wrapper {
     height: 210px;
   }
+}/* Ajuste inteligente para videos verticales u horizontales */
+.media-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Mantiene la proporción real del video sin recortarlo */
+  background-color: #000000; /* Fondo negro para rellenar los bordes si es vertical */
 }
