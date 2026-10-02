@@ -17,7 +17,7 @@
   --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
   --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.12);
   --shadow-lg: 0 20px 30px -10px rgba(0, 210, 255, 0.25);
-  --transition: all 0.3s ease;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --radius: 14px;
 }
 
@@ -32,6 +32,11 @@ html {
   font-family: 'Poppins', sans-serif;
   color: var(--text-main);
   background-color: var(--bg-light);
+}
+
+/* Ajuste de scroll para compensar el header flotante al hacer clic en links */
+section, footer {
+  scroll-margin-top: 80px;
 }
 
 .container {
@@ -111,10 +116,10 @@ ul {
 }
 
 .brand-tag {
-  font-size: 0.55rem;
+  font-size: 0.65rem; /* Ajustado para mejor lectura en móviles */
   color: var(--yellow-accent);
   letter-spacing: 0.5px;
-  margin-top: 2px;
+  margin-top: 3px;
   display: block;
 }
 
@@ -442,6 +447,7 @@ ul {
   cursor: pointer;
   transition: var(--transition);
   font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 .filter-btn:hover,
@@ -516,6 +522,28 @@ ul {
   transform: scale(1.08);
 }
 
+/* Overlay indicativo de zoom */
+.zoom-hint {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 18, 46, 0.4);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  gap: 5px;
+  opacity: 0;
+  transition: var(--transition);
+  z-index: 3;
+}
+
+.ba-box:hover .zoom-hint,
+.media-container:hover .zoom-hint {
+  opacity: 1;
+}
+
 .ba-badge {
   position: absolute;
   bottom: 8px;
@@ -527,6 +555,7 @@ ul {
   color: #ffffff;
   letter-spacing: 0.5px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  z-index: 4;
 }
 
 .ba-badge.before { background-color: var(--red-accent); }
@@ -562,7 +591,7 @@ ul {
   font-size: 0.75rem;
   font-weight: 700;
   color: #fff;
-  z-index: 2;
+  z-index: 4;
 }
 
 .media-badge.photo { background-color: var(--royal-blue); }
@@ -578,6 +607,7 @@ ul {
   color: #fff;
   font-size: 3rem;
   transition: var(--transition);
+  z-index: 3;
 }
 
 .video-box:hover .play-overlay {
@@ -663,14 +693,15 @@ ul {
 
 .modal-close {
   position: absolute;
-  top: 20px;
-  right: 30px;
+  top: 15px;
+  right: 20px;
   color: #ffffff;
-  font-size: 42px;
+  font-size: 38px;
   font-weight: bold;
   cursor: pointer;
   transition: var(--transition);
   z-index: 10000;
+  line-height: 1;
 }
 
 .modal-close:hover {
@@ -951,14 +982,14 @@ ul {
 }
 
 .float-btn {
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 20px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.35);
   transition: var(--transition);
 }
@@ -969,9 +1000,9 @@ ul {
 
 .wa-float {
   background-color: var(--whatsapp-green);
-  width: 58px;
-  height: 58px;
-  font-size: 28px;
+  width: 54px;
+  height: 54px;
+  font-size: 26px;
 }
 
 .fb-float { background-color: var(--facebook-blue); }
@@ -1027,6 +1058,19 @@ ul {
 
   .feature-item { padding: 0.5rem 1rem; }
 
+  /* Filtros horizontales deslizables en móviles */
+  .gallery-filters {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .gallery-filters::-webkit-scrollbar {
+    display: none;
+  }
+
   .gallery-grid {
     grid-template-columns: 1fr;
   }
@@ -1037,14 +1081,39 @@ ul {
   }
 
   .float-btn {
-    width: 44px;
-    height: 44px;
-    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
   }
 
   .wa-float {
-    width: 52px;
-    height: 52px;
-    font-size: 25px;
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
   }
+
+  .modal-close {
+    top: 10px;
+    right: 15px;
+    font-size: 32px;
+  }
+}/* Estilos para enlaces legales en el footer */
+.footer-legal-links {
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
+
+.footer-legal-links a {
+  color: #94a3b8;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.footer-legal-links a:hover {
+  color: var(--cyan-bright);
+}
+
+.footer-legal-links .separator {
+  color: #64748b;
+  margin: 0 8px;
 }

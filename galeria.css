@@ -1,0 +1,232 @@
+/* ==========================================
+   ESTILOS GENERALES Y VARIABLES
+   ========================================== */
+:root {
+  --primary-dark: #00122e;
+  --primary-blue: #0044b3;
+  --cyan-bright: #00d2ff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --bg-light: #f8fafc;
+  --whatsapp-green: #25d366;
+  --whatsapp-hover: #128c7e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: var(--text-main);
+  background-color: var(--bg-light);
+}
+
+/* ==========================================
+   ENLACE VOLVER Y ENCABEZADO
+   ========================================== */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 25px;
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--primary-dark);
+  transform: translateX(-4px);
+}
+
+.header-gallery {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header-gallery h1 {
+  color: var(--primary-dark);
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  position: relative;
+  display: inline-block;
+}
+
+.header-gallery h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--cyan-bright);
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+.header-gallery .subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   CUADRÍCULA DE LA GALERÍA (GRID)
+   ========================================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.gallery-item {
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-item:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 25px rgba(0, 18, 46, 0.12);
+}
+
+/* Contenedor Multimedia */
+.media-wrapper {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background-color: #0f172a;
+  overflow: hidden;
+}
+
+.gallery-item img, 
+.gallery-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Etiqueta de tipo (Foto / Video) */
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 18, 46, 0.75);
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+/* Información del Trabajo */
+.item-info {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-info h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.15rem;
+  color: var(--primary-dark);
+}
+
+.item-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ==========================================
+   CALL TO ACTION (LLAMADA A LA ACCIÓN)
+   ========================================== */
+.cta-box {
+  text-align: center;
+  margin-top: 60px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, #00225c 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 18, 46, 0.2);
+}
+
+.cta-box h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.cta-box p {
+  color: #cbd5e1;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background-color: var(--whatsapp-green);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 50px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: var(--whatsapp-hover);
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* ==========================================
+   AJUSTES MÓVILES (RESPONSIVE)
+   ========================================== */
+@media (max-width: 600px) {
+  body {
+    padding: 20px 15px;
+  }
+
+  .header-gallery h1 {
+    font-size: 1.75rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .media-wrapper {
+    height: 210px;
+  }
+}

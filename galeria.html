@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Trabajos | AircraftMultiservicios</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 30px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            color: #1e293b;
+            background-color: #f8fafc;
+        }
+        .header-gallery {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #00122e;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        p.subtitle {
+            color: #64748b;
+            font-size: 1rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #0044b3;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Cuadrícula de fotos y videos */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .gallery-item {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        .gallery-item img, .gallery-item video {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+        }
+        .item-info {
+            padding: 15px;
+        }
+        .item-info h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.1rem;
+            color: #00122e;
+        }
+        .item-info p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        
+        /* Botón de llamada a la acción flotante/final */
+        .cta-box {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background: #00122e;
+            color: #ffffff;
+            border-radius: 12px;
+        }
+        .cta-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            background-color: #25d366;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+        .cta-btn:hover {
+            background-color: #128c7e;
+        }
+    </style>
+</head><link rel="stylesheet" href="galeria.css">
+<body>
+
+    <a href="index.html" class="back-link">&larr; Volver a Inicio</a>
+
+    <div class="header-gallery">
+        <h1>Nuestros Trabajos Realizados</h1>
+        <p class="subtitle">Evidencia fotográfica y en video de nuestros servicios de mantenimiento y reparación técnico a domicilio.</p>
+    </div>
+
+    <div class="gallery-grid">
+
+        <!-- Item 1: Foto -->
+        <div class="gallery-item">
+            <img src="images/trabajo1.jpg" alt="Mantenimiento de aire acondicionado">
+            <div class="item-info">
+                <h3>Mantenimiento Preventivo A/C</h3>
+                <p>Limpieza profunda de evaporador y condensador.</p>
+            </div>
+        </div>
+
+        <!-- Item 2: Video -->
+        <div class="gallery-item">
+            <video controls poster="images/trabajo2.jpg">
+                <source src="videos/trabajo2.mp4" type="video/mp4">
+                Tu navegador no soporta videos HTML5.
+            </video>
+            <div class="item-info">
+                <h3>Prueba de Funcionamiento</h3>
+                <p>Verificación de presión de refrigerante post-servicio.</p>
+            </div>
+        </div>
+
+        <!-- Item 3: Foto -->
+        <div class="gallery-item">
+            <img src="images/trabajo3.jpg" alt="Reparación de refrigeración">
+            <div class="item-info">
+                <h3>Reparación de Climatización</h3>
+                <p>Cambio de componentes y calibración de tarjeta electrónica.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="cta-box">
+        <h2>¿Necesitas un servicio similar para tu equipo?</h2>
+        <p>Contáctanos directamente por WhatsApp y solicita tu diagnóstico o mantenimiento.</p>
+        <a href="https://wa.me/573113806211?text=Hola,%20vi%20su%20galería%20de%20trabajos%20y%20me%20gustaría%20solicitar%20un%20servicio" class="cta-btn" target="_blank">
+            Cotizar Servicio por WhatsApp
+        </a>
+    </div>
+
+</body>
+</html>
