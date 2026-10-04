@@ -22,32 +22,8 @@
         </div>
     </div>
 
-    <!-- CUADRÍCULA DE FOTOS -->
-    <div class="gallery-grid">
-
-        <div class="gallery-item">
-            <div class="media-wrapper">
-                <span class="badge">Foto</span>
-                <img src="images/trabajo1.jpg" alt="Mantenimiento preventivo A/C">
-            </div>
-            <div class="item-info">
-                <h3>Mantenimiento Preventivo A/C</h3>
-                <p>Limpieza técnica de evaporador y condensador.</p>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="media-wrapper">
-                <span class="badge">Foto</span>
-                <img src="images/trabajo2.jpg" alt="Instalación de sistema">
-            </div>
-            <div class="item-info">
-                <h3>Instalación de Climatización</h3>
-                <p>Montaje y acople de tubería de cobre.</p>
-            </div>
-        </div>
-
-    </div>
+    <!-- CONTENEDOR DINÁMICO DONDE JAVASCRIPT GENERARÁ LAS FOTOS -->
+    <div id="gallery-container" class="gallery-grid"></div>
 
     <!-- LLAMADA A LA ACCIÓN -->
     <div class="cta-box">
@@ -58,5 +34,7 @@
         </a>
     </div>
 
+    <!-- SCRIPT DE CARGA AUTOMÁTICA -->
+    <script src="galeria-fotos.js"></script>
 </body>
 </html>
