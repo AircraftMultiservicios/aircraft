@@ -13,11 +13,14 @@ function generarGaleria() {
 
     for (let i = 1; i <= TOTAL_FOTOS; i++) {
         htmlContenido += `
-            <div class="gallery-item">
+            <div class="gallery-item" id="foto-card-${i}">
                 <div class="media-wrapper">
                     <span class="badge">Foto</span>
-                    <!-- Carga diferida (lazy) para mantener la velocidad -->
-                    <img src="images/foto (${i}).jpg" alt="Mantenimiento técnico AircraftMultiservicios" loading="lazy">
+                    <!-- Carga diferida (lazy) y ocultamiento dinámico si no existe la imagen -->
+                    <img src="images/foto (${i}).jpg" 
+                         alt="Mantenimiento técnico AircraftMultiservicios" 
+                         loading="lazy"
+                         onerror="ocultarFotoFaltante(${i})">
                 </div>
                 <div class="item-info">
                     <h3>Servicio Técnico Garantizado</h3>
@@ -28,6 +31,14 @@ function generarGaleria() {
     }
 
     contenedor.innerHTML = htmlContenido;
+}
+
+// Oculta la tarjeta automáticamente si la imagen no existe en el servidor
+function ocultarFotoFaltante(id) {
+    const tarjeta = document.getElementById(`foto-card-${id}`);
+    if (tarjeta) {
+        tarjeta.style.display = 'none';
+    }
 }
 
 // Ejecuta la función al cargar la página
